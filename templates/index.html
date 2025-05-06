@@ -1,1 +1,26 @@
 
+{% extends "base.html" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h1>Добро пожаловать на мой сайт!</h1>
+    <p>Это главная страница моего Flask-приложения.</p>
+    <p>Текущая дата: {{ date }}</p>
+{% endblock %}
+4. templates/blog.html
+html
+{% extends "base.html" %}
+
+{% block title %}Блог{% endblock %}
+
+{% block content %}
+    <h1>Мой блог</h1>
+
+    {% for post in posts %}
+        <article class="post">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+        </article>
+    {% endfor %}
+{% endblock %}
